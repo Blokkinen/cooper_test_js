@@ -1,18 +1,14 @@
-describe("Person", function() {
+describe("CooperTest", function() {
+    var person;
+    var calculate;
 
-   beforeEach(function() {
-       person = new Person({
-       gender: 'Female',
-           age: 30
-       });
-    });
+            beforeEach(function() {
+                person = new Person({gender: 'female', age: 30, distance: 2345});
+                calculate = new CooperTest();
+            });
 
-    it("Should have gender", function() {
-        expect(person.gender).toBe('Female');
-    });
-
-    it("Should have age", function() {
-       expect(person.age).toBe(30);
-    });
-
-});
+            it("Should have a result of \"Above Average\"", function() {
+                person.result();
+                expect(person.message).toEqual("Above Average");
+            });
+        });
